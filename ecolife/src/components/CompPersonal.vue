@@ -1,17 +1,13 @@
 <template> 
-  <div> 
+  <div class="w-100pr row justify-center"> 
     <!-- bosh sarlavha --> 
     <div 
-      class=" 
-        w-100pr 
-        container 
-        br-10px 
-        w-81pr 
-        row 
+      class=" w-75pr_md-100pr_sm-100pr
         justify-center 
         content-center 
         shadow-up-14 
-        q-pb-xl 
+        q-pb-xl
+        login 
       " 
     > 
       <div class="w-100pr h-550px q-ml-md items-center"> 
@@ -88,3 +84,8 @@ export default {
   }, 
 }; 
 </script>
+<style scoped>
+.login{
+  border-radius: 20px 0px 20px 0px;
+}
+</style>
