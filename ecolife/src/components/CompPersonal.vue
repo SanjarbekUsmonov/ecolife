@@ -16,6 +16,7 @@
           1 Personal Information 
         </div> 
         <!-- inputlar boshlanishi --> 
+        
         <br /> 
         <form> 
           <div class="q-mt-xl q-ml-md items-start content-start"> 
