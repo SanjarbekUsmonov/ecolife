@@ -10,7 +10,7 @@
         login 
       " 
     > 
-      <div class="w-100pr h-500px q-ml-md items-center"> 
+      <div class="w-100pr h-480px q-ml-md items-center"> 
         <br /> 
         <div class=" text-grey contact text-h5 text-weight-bolder"> 
           1 Personal Information 
