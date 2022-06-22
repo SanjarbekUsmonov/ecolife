@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-230px">
+  <div>
     <div class="w-100pr h-80px bg-white q-mt-lg row content-center">
       <div>
         <div class="text-h5">Popular Categories</div>

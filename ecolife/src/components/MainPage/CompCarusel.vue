@@ -1,6 +1,6 @@
 <template>
   <div class="main-corusel w-100pr ">
-    <q-carousel swipeable animated arrows v-model="slide" infinite :autoplay="false" style="height: auto;">
+    <q-carousel swipeable animated arrows v-model="slide" infinite :autoplay="true" style="height: auto;">
       <q-carousel-slide class="w-100pr" :name="1">
         <q-img class="w-100pr h-610px"
           src="http://demo.posthemes.com/pos_ecolife_fastfood/modules/posslideshows/images/sample-1.jpg">
@@ -65,8 +65,5 @@ export default {
   padding: 0px;
 }
 
-.main-corusel {
-  position: absolute;
-  top: 0px
-}
+
 </style>
