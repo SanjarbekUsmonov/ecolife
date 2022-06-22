@@ -1,25 +1,22 @@
 <template> 
-  <div> 
+  <div class="w-100pr row justify-center"> 
     <!-- bosh sarlavha --> 
     <div 
-      class=" 
-        w-100pr 
-        container 
-        br-10px 
-        w-81pr 
-        row 
+      class=" w-75pr_md-100pr_sm-100pr
         justify-center 
         content-center 
         shadow-up-14 
-        q-pb-xl 
+        q-pb-xl
+        login 
       " 
     > 
-      <div class="w-100pr h-550px q-ml-md items-center"> 
+      <div class="w-100pr h-480px q-ml-md items-center"> 
         <br /> 
         <div class=" text-grey contact text-h5 text-weight-bolder"> 
           1 Personal Information 
         </div> 
         <!-- inputlar boshlanishi --> 
+        
         <br /> 
         <form> 
           <div class="q-mt-xl q-ml-md items-start content-start"> 
@@ -52,15 +49,8 @@
           </form> 
         </div> 
  
-        <div class="q-mt-xl w-90pr q-ml-md"> 
-          <form> 
-            <q-input 
-              type="textarea" 
-              v-model="textarea" 
-              label="Location" 
-              :dense="dense" 
-            /> 
-          </form> 
+        <div class="q-mt-xl w-100pr row justify-center "> 
+          <q-btn class="btn">Lakatsiyani jo'natish  <q-icon name="location_on" class="ml-10px" color="yellow" size="20px"></q-icon></q-btn>
         </div> 
         <br /> 
         <div class="row q-mt-md justify-center"> 
@@ -88,3 +78,26 @@ export default {
   }, 
 }; 
 </script>
+<style scoped>
+.login{
+  border-radius: 20px 0px 20px 0px;
+}
+.btn{
+  background: linear-gradient(
+   to left,
+    rgba(132, 0, 255, 0.63),
+    rgba(174, 0, 255, 0.63),
+    rgba(255, 0, 191, 0.61)
+  );
+   color: beige;
+}
+.btn:active{
+  background: linear-gradient(
+   to left,
+    rgba(132, 0, 255 ),
+    rgba(174, 0, 255),
+    rgba(255, 0, 191 )
+  );
+  color: beige;
+}
+</style>
