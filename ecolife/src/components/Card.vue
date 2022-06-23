@@ -29,7 +29,7 @@
       </div>
       <q-separator class=" w-100pr" color="grey-5" size="2px"  />
     </div>
-      <div class="mt-2pr ml-4pr">
+      <div class="mt-2pr ml-4pr q-mb-md">
         <q-btn class="btn"   label="Continue Shopping" />
       </div>
   </div>
