@@ -18,8 +18,10 @@
           <q-space />
           <router-link to="login" class="fs-18px mr-20px"> Log In </router-link>
           <q-icon color="white" size="25px" name="search" class="q-mr-md" />
-          <q-icon color="white" size="25px" name="lock" /><strong
-            class="mt-3px mr-10px text-white text-weight-bold">$0.00</strong>
+          <router-link to="basket">
+            <q-icon color="white" size="25px" name="shopping_cart" /><strong
+            class="mt-3px ml-10px mr-10px text-white text-weight-bold">0.00 $</strong>
+          </router-link>
         </div>
       </q-toolbar>
     </q-header>
@@ -117,6 +119,9 @@ export default {
 }
 .fs-18px:hover{
   color:rgb(0, 255, 247);
+}
+a{
+  text-decoration: none;
 }
 .navbar{
   background: linear-gradient(

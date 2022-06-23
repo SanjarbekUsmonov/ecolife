@@ -1,7 +1,7 @@
 <template>
 <div>
 <div>
-    <div class="container w-100pr br-6px shadow-up-14">
+    <div class="container w-100pr  " style="border:1px solid grey">
       <div class="contier w-100pr q-pt-sm">
         <div class="q-ml-sm q-mr-sm text-subtitle2">2 items</div>
         <q-list class="rounded-borders" />
@@ -63,6 +63,9 @@
         <q-icon class="text-h3 " color="grey" name="currency_exchange"></q-icon>
         <div class="w-80pr q-ml-md text-grey">Return Policy (Edit With Customer Reassurance Module)</div>
       </div>
+      <div class="row mt-50px justify-center">
+        <q-btn class="btnout">Proceed To Checkout</q-btn>
+      </div>
     </div>
   </div>
 </div>
@@ -77,6 +80,14 @@ export default {
 <style scoped>
 .btn {
   border: none;
+}
+.btnout {
+  background-color: black;
+  transition: 0.6s ease;
+  color: white;
+}
+.btnout:hover {
+  background-color: red;
 }
 
 .contier {

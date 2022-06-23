@@ -9,8 +9,11 @@ const routes = [
       { path: 'carrier', component: () => import('src/pages/ForCarrierPage.vue') },
       { path: 'report', component: () => import('src/pages/MonthlyReport.vue') },
       { path: 'personal', component: () => import('src/pages/Personalpage.vue') },
-      { path: 'card', component: () => import('src/pages/Cart.vue')},
+      { path: 'basket', component: () => import('src/pages/BasketPage.vue')},
       { path: 'login', component: () => import('src/pages/LoginPage.vue')},
+      { path: 'shop', component: () => import('src/pages/ShopPage.vue')},
+      { path: 'alert', component: () => import('src/pages/AlertCard.vue')},
+
       
       
       
