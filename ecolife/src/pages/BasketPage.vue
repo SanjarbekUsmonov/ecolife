@@ -1,0 +1,23 @@
+<template>
+  <q-page>
+    <div class="row w-100pr justify-around mt-5pr">
+      <div class="w-60pr_md-80pr_sm-90pr">
+        <card />
+      </div>
+      <div class="w-30pr_md-70pr_sm-90pr mb-50px">
+        <card2 />
+      </div>
+    </div>
+  </q-page>
+</template>
+
+<script>
+import Card from "../components/Basket/Card.vue";
+import Card2 from "src/components/Basket/Card2.vue";
+export default {
+  components: { Card, Card2 },
+};
+</script>
+
+<style>
+</style>

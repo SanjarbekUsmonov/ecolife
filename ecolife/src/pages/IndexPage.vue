@@ -3,7 +3,6 @@
     <div>
       <CompCarusel />
     </div>
-    <div class="mt-340px"></div>
     <div class="container row wrap justify-center">
       <div class="content">
         <CompPopular />
@@ -30,11 +29,11 @@
 </template>
 
 <script>
-import CompCarusel from "src/components/CompCarusel";
-import CompPopular from "../components/CompPopular";
-import CompFeatured from "src/components/CompFeatured";
-import CompLatest from "src/components/CompLatest";
-import CompHotdeals from "src/components/CompHotdeals.vue";
+import CompCarusel from "src/components/MainPage/CompCarusel";
+import CompPopular from "../components/MainPage/CompPopular";
+import CompFeatured from "src/components/MainPage/CompFeatured";
+import CompLatest from "src/components/MainPage/CompLatest";
+import CompHotdeals from "src/components/MainPage/CompHotdeals.vue";
 export default {
   components: {
     CompCarusel,

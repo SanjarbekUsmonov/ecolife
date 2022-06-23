@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-230px">
+  <div>
     <div class="w-100pr h-80px bg-white q-mt-lg row content-center">
       <div>
         <div class="text-h5">Popular Categories</div>
@@ -9,7 +9,7 @@
 
     <div class="
         w-100pr
-        h-430px
+        mb-50px
         bg-white
         row
         wrap
@@ -17,23 +17,25 @@
         items-start
         content-start
       ">
-      <div class="w-32pr  q-mt-lg" v-for="cart in carts" :key="cart.id">
-        <q-img :src="cart.img" width="400px" height="160px">
-          <div class="w-100pr h-100pr row items-center" style="background: none">
-            <div class="text-fresh q-ml-md w-40pr h-70pr" style="background: none">
-              <div class="text-h6 text-weight-medium text-black">
-                {{ cart.fresh }}
-              </div>
-              <div class="text-grey">
-                {{ cart.product }}
-              </div>
-              <div class="a">
-                <a href="">{{ cart.a }}</a>
+      <router-link to="shop" v-for="cart in carts" :key="cart.id">
+        <div class="  q-mt-lg" >
+          <q-img :src="cart.img" width="400px" height="160px">
+            <div class="w-100pr h-100pr row items-center" style="background: none">
+              <div class="text-fresh q-ml-md w-40pr h-70pr" style="background: none">
+                <div class="text-h6 text-weight-medium text-black">
+                  {{ cart.fresh }}
+                </div>
+                <div class="text-grey">
+                  {{ cart.product }}
+                </div>
+                <div class="a">
+                  <a href="">{{ cart.a }}</a>
+                </div>
               </div>
             </div>
-          </div>
-        </q-img>
-      </div>
+          </q-img>
+        </div>
+      </router-link>
     </div>
   </div>
 </template>

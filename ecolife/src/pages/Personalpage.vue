@@ -16,8 +16,8 @@
 </template> 
  
 <script> 
-import CompPersonal from '../components/CompPersonal.vue'
-import CompTotel from '../components/CompTotel.vue'
+import CompPersonal from '../components/Registration/CompPersonal.vue'
+import CompTotel from '../components/Registration/CompTotel.vue'
 
  
 export default {
