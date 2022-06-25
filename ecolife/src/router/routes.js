@@ -13,9 +13,9 @@ const routes = [
       { path: 'login', component: () => import('src/pages/LoginPage.vue')},
       { path: 'shop', component: () => import('src/pages/ShopPage.vue')},
       { path: 'alert', component: () => import('src/pages/AlertCard.vue')},
-
-      
-      
+      { path: 'about', component: () => import('src/pages/Aboutus.vue')},
+      { path: '/id/:id', component: () => import('src/pages/id.vue')},  
+      { path: 'ids', component: () => import('src/pages/ids.vue')},
       
     ]
   },

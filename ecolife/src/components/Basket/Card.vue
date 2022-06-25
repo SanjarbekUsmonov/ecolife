@@ -6,7 +6,7 @@
         <div class="w-25pr">
           <q-img :width="widthImg" :src="card.src" />
         </div>
-        <div class="w-45pr content " >
+        <div class="w-45pr content-card " >
           <div class="w-65pr_md-65pr_sm-100pr h-90pr ">
             <div class="fs-16px">
               {{ card.span }}
@@ -49,14 +49,16 @@
             </div>
           </div>
         </div>
-        <div class="w-17pr h-90pr row justify-center">
-          <span class="fs-16px">{{ card.iq }}</span>
-        </div>
-        <div class="w-5pr h-90pr row justify-end">
-          <q-icon size="22px" :name="card.icon" />
+        <div class=" for-icon-content w-23pr row">
+          <div class=" forr w-70pr h-90pr row justify-center">
+            <span class="fs-16px">{{ card.iq }}</span>
+          </div>
+          <div class=" for-icon w-30pr  h-90pr row justify-end">
+            <q-icon  size="22px" :name="card.icon" />
+          </div>
         </div>
       </div>
-      <q-separator class="w-100pr" color="grey-5" />
+      <q-separator class="w-100pr pr-40px"  color="grey-5" />
     </div>
     <div class="mt-50px ml-4pr mb-50px row justify-center">
       <q-btn class="btn" to="shop" label="Continue Shopping" />
@@ -139,13 +141,27 @@ export default {
 .btn-inc:active {
   background: rgb(184, 183, 183);
 }
-.content{
-  
-}
+
 
 @media screen and (min-width:600px) {
-  .content{
+  .content-card{
     display: flex;
+  }
+}
+@media screen and (max-width:500px) {
+  .for-icon-content{
+    position: relative;
+    height: 100px;
+  }
+  .for-icon{
+    position: absolute;
+    top: 0px;
+
+  }
+  .forr{
+    position: absolute;
+    top: 50px;
+
   }
 }
 </style>

@@ -55,9 +55,9 @@
 </template>
 <script>
 import { ref } from 'vue'
-import ForAlert from '../components/ForAlert.vue';
-import ForCard from '../components/ForCard.vue';
-import ForPageShopInCard from '../components/ForPageShopInCard.vue';
+import ForAlert from '../components/ShopAlert/ForAlert.vue';
+import ForCard from '../components/ShopAlert/ForCard.vue';
+import ForPageShopInCard from '../components/ShopAlert/ForPageShopInCard.vue';
 export default {
   components: { ForAlert,ForCard, ForPageShopInCard },
   data()
