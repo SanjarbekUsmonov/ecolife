@@ -26,7 +26,7 @@
                             <q-card>
                                 <q-card-section>
                                     <div class="w-100pr">
-                                        <div class="fs-16px">Oluvchi:{{order.clientfullname}}</div>
+                                        <div class="fs-16px">Oluvchi:{{order.fullname}}</div>
                                         <q-separator  size="1px" class="bg-grey-7" />
                                     </div>
                                     <div class="w-100pr">
@@ -239,7 +239,7 @@
                     </div>
                     <div class="w-100pr row justify-center pl-50px pr-50px">
                         <div class="w-100pr">
-                            <div class="fs-16px">Oluvchi:{{order.clientfullname}}</div>
+                            <div class="fs-16px">Oluvchi:{{order.fullname}}</div>
                             <q-separator  size="1px" class="bg-grey-7" />
                         </div>
                         <div class="w-100pr">

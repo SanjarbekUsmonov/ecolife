@@ -40,7 +40,7 @@
                             <q-card>
                                 <q-card-section>
                                     <div class="w-100pr">
-                                        <div class="fs-16px">Oluvchi:{{order.clientfullname}}</div>
+                                        <div class="fs-16px">Oluvchi:{{order.fullname}}</div>
                                         <q-separator  size="1px" class="bg-grey-7" />
                                     </div>
                                     <div class="w-100pr">
@@ -172,12 +172,12 @@
                             expand-separator
                             icon="perm_identity"
                             label="Qabul Qiluvchi"
-                            :caption="order.clientfullname"
+                            :caption="order.fullname"
                         >
                             <q-card>
                                 <q-card-section>
                                     <div class="w-100pr">
-                                        <div class="fs-16px mt-5px">{{order.clientfullname}}</div>
+                                        <div class="fs-16px mt-5px">{{order.fullname}}</div>
                                         <q-separator  size="1px" class="bg-grey-7" />
                                     </div>
                                     <div class="w-100pr">

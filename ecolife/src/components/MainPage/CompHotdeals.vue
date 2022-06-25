@@ -22,30 +22,32 @@
             Add new products to weekly line upf
           </div>
         </div>
-        <div class="cart w-205px h-380px  q-mt-md row justify-center content-center" v-for="cart in cart"
-          :key="cart.id">
+        <div class="cart w-205px h-380px  q-mt-md row justify-center content-center" v-for="(product , i) in products"
+          :key="i">
           <div class="w-90pr h-90pr  ">
             <div class="w-100pr h-54pr ">
-              <q-img :src="cart.img" alt="" class="img w-100pr h-97pr">
+              <q-img :src="product.imgLink" alt="" class="img w-100pr h-97pr">
                 <div class="search w-100pr h-100pr row content-center justify-center" style="background: none;">
                   <q-icon class="icon" size="25px" name="search" />
                 </div>
               </q-img>
             </div>
             <div class="text w-90pr h-30pr mt-20px ml-10px ">
-              <a class="href fs-12px " href="">{{ cart.href }}</a><br>
-              <a class="a text-subtitle1 text-weight-bold text-black" href="">{{ cart.a }}</a>
+              <a class="href fs-12px " href="">SDUDIO DECIGN</a><br>
+              <a class="a text-subtitle1 text-weight-bold text-black" href="">{{ product.name }}</a>
               <div class="row items-center">
-                <q-icon :name="cart.icon" color="yellow" size="17px" />
-                <q-icon :name="cart.icon" color="yellow" size="17px" />
-                <q-icon :name="cart.icon" color="yellow" size="17px" />
-                <q-icon :name="cart.icon" color="yellow" size="17px" />
-                <q-icon :name="cart.icon" color="yellow" size="17px" />
+                <q-icon name="star" color="yellow" size="17px" />
+                <q-icon name="star" color="yellow" size="17px" />
+                <q-icon name="star" color="yellow" size="17px" />
+                <q-icon name="star" color="yellow" size="17px" />
+                <q-icon name="star" color="yellow" size="17px" />
               </div>
               <div>
-                <del class="text-grey">{{ cart.del }}</del>
-                <span class="ml-5px text-dark text-subtitle1">{{ cart.span }}</span>
+                <del class="text-grey">{{ product.oldPrice }}$</del>
+                <span class="ml-5px text-dark text-subtitle1">{{ product.price }}$</span>
+                <q-icon class="ml-20px" @click="addBacket(i)" color="yellow" size="25px" name="shopping_cart" />
               </div>
+              
             </div>
           </div>
         </div>
@@ -54,89 +56,41 @@
   </div>
 </template>
 <script>
+import { mapMutations, mapState } from 'vuex';
 import CompCarusel2 from './CompCarusel2.vue';
 export default {
   components: {
     CompCarusel2
   },
+  computed:{
+    ...mapState(['products'])
+  },
+  
   data() {
     return {
-      cart: [
-        {
-          id: 1,
-          img: 'http://demo.posthemes.com/pos_ecolife_fastfood/375-home_default/pizza-mushrooms.jpg',
-          href: 'SDUDIO DECIGN',
-          a: 'Juicy Couture Juicy...',
-          icon: 'star',
-          del: '$35.90',
-          span: '$34.11'
-        },
-        {
-          id: 2,
-          img: 'http://demo.posthemes.com/pos_ecolife_fastfood/375-home_default/pizza-mushrooms.jpg',
-          href: 'SDUDIO DECIGN',
-          a: 'Juicy Couture Juicy...',
-          icon: 'star',
-          del: '$35.90',
-          span: '$34.11'
-        },
-        {
-          id: 3,
-          img: 'http://demo.posthemes.com/pos_ecolife_fastfood/375-home_default/pizza-mushrooms.jpg',
-          href: 'SDUDIO DECIGN',
-          a: 'Juicy Couture Juicy...',
-          icon: 'star',
-          del: '$35.90',
-          span: '$34.11'
-        },
-        {
-          id: 4,
-          img: 'http://demo.posthemes.com/pos_ecolife_fastfood/375-home_default/pizza-mushrooms.jpg',
-          href: 'SDUDIO DECIGN',
-          a: 'Juicy Couture Juicy...',
-          icon: 'star',
-          del: '$35.90',
-          span: '$34.11'
-        },
-        {
-          id: 5,
-          img: 'http://demo.posthemes.com/pos_ecolife_fastfood/375-home_default/pizza-mushrooms.jpg',
-          href: 'SDUDIO DECIGN',
-          a: 'Juicy Couture Juicy...',
-          icon: 'star',
-          del: '$35.90',
-          span: '$34.11'
-        },
-        {
-          id: 6,
-          img: 'http://demo.posthemes.com/pos_ecolife_fastfood/375-home_default/pizza-mushrooms.jpg',
-          href: 'SDUDIO DECIGN',
-          a: 'Juicy Couture Juicy...',
-          icon: 'star',
-          del: '$35.90',
-          span: '$34.11'
-        },
-        {
-          id: 7,
-          img: 'http://demo.posthemes.com/pos_ecolife_fastfood/375-home_default/pizza-mushrooms.jpg',
-          href: 'SDUDIO DECIGN',
-          a: 'Juicy Couture Juicy...',
-          icon: 'star',
-          del: '$35.90',
-          span: '$34.11'
-        },
-        {
-          id: 8,
-          img: 'http://demo.posthemes.com/pos_ecolife_fastfood/375-home_default/pizza-mushrooms.jpg',
-          href: 'SDUDIO DECIGN',
-          a: 'Juicy Couture Juicy...',
-          icon: 'star',
-          del: '$35.90',
-          span: '$34.11'
-        },
-      ]
+     
     }
+    
   },
+  methods: {
+    // cardning ostidagi iconni bosganda quyidagi amal bajariladi
+      ...mapMutations(["ADD_BACKET"]),
+      addBacket(i){
+        const cost ={
+          id:this.products[i].id,
+          imgLink:this.products[i].imgLink,
+          name: this.products[i].name,
+          price: this.products[i].price,
+          oldPrice: this.products[i].oldPrice,
+          type:"",
+          color:this.products[i].color,
+          skitka:this.products[i].skitka,
+          amount:1,
+          overallPrice:this.products[i].price
+        }
+        this.ADD_BACKET(cost)
+      }
+    },
 }
 
 </script>

@@ -17,7 +17,7 @@ export default store(function (/* { ssrContext } */) {
     state:{
       orders:[
         {  
-          clientfullname:"Alimardon Mullojonov",
+          fullname:"Alimardon Mullojonov",
           address:"o'rta qishloq ko'chasi 22-uy",
           telnumber:"+998996399459",
           ready:"",
@@ -130,8 +130,71 @@ export default store(function (/* { ssrContext } */) {
         },
         
       ],
+      products:[
+        {
+          id:0,
+          name:"olma",
+          imgLink:"http://demo.posthemes.com/pos_ecolife_fastfood/375-cart_default/pizza-mushrooms.jpg",
+          color:"qizil",
+          oldPrice:"",
+          price:15000,
+          type:"",
+          skitka:'',
+        },
+        {
+          id:1,
+          name:"anor",
+          imgLink:"http://demo.posthemes.com/pos_ecolife_fastfood/375-cart_default/pizza-mushrooms.jpg",
+          color:"qizil",
+          oldPrice:"",
+          price:50000,
+          type:"",
+          skitka:'',
+        },
+        {
+          id:2,
+          name:"nok",
+          imgLink:"http://demo.posthemes.com/pos_ecolife_fastfood/375-cart_default/pizza-mushrooms.jpg",
+          color:"sariq",
+          oldPrice:"",
+          price:35000,
+          type:"",
+          skitka:'',
+        }
+      ],
+      costs:[],
+
     },
+    
     mutations:{
+      // main yoki maxsulotnig pagesidan bu yerga malumot kelib state ichidagi costs obyektiga malumot kelib tushyabdi
+      ADD_BACKET:(state,cost)=>{
+        state.costs.unshift(cost)
+        console.log(state.costs);
+      },
+      // backed pageda maxsulotni olishdan oldingi o'zgarishlar 
+      EDIT_BACKET:(state,i,modifiedCost)=>{
+        state.costs[i]=modifiedCost
+      },
+      // maxsulot sonini o'zgartirish 1- qo'shish 2- ayrish
+      INCREMENT:(state,i)=>{
+        state.costs[i].amount++
+        state.costs[i].overallPrice=Math.round10(state.costs[i].amount*state.costs[i].price , -2)
+      },
+      DECREMENT:(state,i)=>{
+        state.costs[i].amount--
+        state.costs[i].overallPrice=Math.round10(state.costs[i].amount*state.costs[i].price , -2)
+      },
+      // karzinkaga qo'shilgan malumotlarin o'chirish uchun
+      REMOWE:(state,i)=>{
+        state.costs.splice(i ,1 )
+      },
+      // register pageda malumotlarni jo'natish tugmasi bosilganda xaridorning ma'lumotlar va xarajatlar ro'yxati state ichidagi orders ichiga kelib tushadi
+      SET_ORDER:(state,order)=>{
+        state.orders.unshift(order)   
+      },
+      // ordersga malumot qo'shish
+      // admin paga
       PREPARATION:(state,i)=>{
         state.orders[i].ready="Preparation"
 
@@ -146,7 +209,7 @@ export default store(function (/* { ssrContext } */) {
       Delivered:(state ,i)=>{
         state.orders[i].ready="Delivered"
       },
-       
+      
 
 
     },

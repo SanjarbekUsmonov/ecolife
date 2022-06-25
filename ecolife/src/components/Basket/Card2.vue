@@ -64,7 +64,7 @@
         <div class="w-80pr q-ml-md text-grey">Return Policy (Edit With Customer Reassurance Module)</div>
       </div>
       <div class="row mt-50px justify-center">
-        <q-btn class="btnout">Proceed To Checkout</q-btn>
+        <q-btn class="btnout" to="personal" >Proceed To Checkout</q-btn>
       </div>
     </div>
   </div>
@@ -82,12 +82,12 @@ export default {
   border: none;
 }
 .btnout {
-  background-color: black;
+  background-color: red;
   transition: 0.6s ease;
   color: white;
 }
 .btnout:hover {
-  background-color: red;
+  background-color: black;
 }
 
 .contier {
