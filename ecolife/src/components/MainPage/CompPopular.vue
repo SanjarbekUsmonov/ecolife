@@ -17,19 +17,19 @@
         items-start
         content-start
       ">
-      <router-link to="shop" v-for="cart in carts" :key="cart.id">
+      <router-link :to="'/shop/'+categoriy.id" v-for="(categoriy , i) in categoriya" :key="i">
         <div class="  q-mt-lg" >
-          <q-img :src="cart.img" width="400px" height="160px">
+          <q-img :src="categoriyaImg[i].file_field" width="400px" height="160px">
             <div class="w-100pr h-100pr row items-center" style="background: none">
               <div class="text-fresh q-ml-md w-40pr h-70pr" style="background: none">
                 <div class="text-h6 text-weight-medium text-black">
-                  {{ cart.fresh }}
+                  {{ categoriy.categoriya_nomi }}
                 </div>
                 <div class="text-grey">
-                  {{ cart.product }}
+                  {{ categoriyaImg[i].title }}
                 </div>
                 <div class="a">
-                  <a href="">{{ cart.a }}</a>
+                  <a href="">{{ categoriy.a }}</a>
                 </div>
               </div>
             </div>
@@ -40,55 +40,74 @@
   </div>
 </template>
 <script>
+import {mapMutations} from 'vuex';
+import { ref , onMounted } from "vue";
+import axios from "axios";
 export default {
+  // props:['categoriya','categoriyaImg'],
+  setup(){
+    const categoriya=ref([])
+    const categoriyaImg=ref([])
+         onMounted(()=>{
+        
+      const getComment = async () => {
+        try {
+          const Fetch_Categoriya = await axios.get('http://127.0.0.1:8000/categoriya/');
+          categoriya.value = Fetch_Categoriya.data;
+          console.log('lkjhg');
+        } 
+        catch (err) {
+          console.log(err);
+        }
+
+      };
+      const getCategoriya_imgs = async () =>{
+        try {
+          const Fetch_Categoriya_Img = await axios.get('http://127.0.0.1:8000/rasmlar/');
+          categoriyaImg.value = Fetch_Categoriya_Img.data;
+        } 
+        catch (err) {
+          console.log(err);
+        }
+      }
+       let timerId = setInterval(() => { getComment(); getCategoriya_imgs()}, 1000);
+      setTimeout(() => { clearInterval(timerId) }, 5000);
+      
+      }
+  
+    )
+  
+      return{
+        categoriya,
+        categoriyaImg
+      } 
+  },
   data() {
     return {
-      carts: [
-        {
-          id: 1,
-          img: "http://demo.posthemes.com/pos_ecolife_fastfood/modules/xipblog/img/home_default-blog2.jpg",
-          fresh: " Fresh Vegetables",
-          product: "17 Product",
-          a: "Shop Now",
-        },
-        {
-          id: 2,
-          img: "http://demo.posthemes.com/pos_ecolife_fastfood/modules/xipblog/img/home_default-blog2.jpg",
-          fresh: " Fresh Vegetables",
-          product: "17 Product",
-          a: "Shop Now",
-        },
-        {
-          id: 3,
-          img: "http://demo.posthemes.com/pos_ecolife_fastfood/modules/xipblog/img/home_default-blog2.jpg",
-          fresh: " Fresh Vegetables",
-          product: "17 Product",
-          a: "Shop Now",
-        },
-        {
-          id: 4,
-          img: "http://demo.posthemes.com/pos_ecolife_fastfood/modules/xipblog/img/home_default-blog2.jpg",
-          fresh: " Fresh Vegetables",
-          product: "17 Product",
-          a: "Shop Now",
-        },
-        {
-          id: 5,
-          img: "http://demo.posthemes.com/pos_ecolife_fastfood/modules/xipblog/img/home_default-blog2.jpg",
-          fresh: " Fresh Vegetables",
-          product: "17 Product",
-          a: "Shop Now",
-        },
-        {
-          id: 6,
-          img: "http://demo.posthemes.com/pos_ecolife_fastfood/modules/xipblog/img/home_default-blog2.jpg",
-          fresh: " Fresh Vegetables",
-          product: "17 Product",
-          a: "Shop Now",
-        },
-      ],
+    
+     
     };
   },
+  methods:{
+    ...mapMutations(["FETCH_CATEGORIYA"]),
+    // Fetch_Categoriya(){
+    //   fetch('http://127.0.0.1:8000/categoriya/')
+    //     .then(response => response.json())
+    //     .then(data => this.categoriya = data);
+    //     console.log(this.categoriya);
+    //   this.FETCH_CATEGORIYA(this.categoriya)
+    // },
+    // Fetch_Categoriya_imgs(){
+    //   fetch('http://127.0.0.1:8000/rasmlar/')
+    //   .then(response => response.json())
+    //   .then(data => this.categoriyaImg = data);
+    //   console.log(this.categoriyaImg);
+    // }
+  },
+  // mounted() {
+  //   this.Fetch_Categoriya(),
+  //   this.Fetch_Categoriya_imgs()
+  // }
 };
 </script>
 <style scoped>

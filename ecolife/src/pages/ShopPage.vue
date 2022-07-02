@@ -82,16 +82,39 @@
       <Shopcards/>
     </div>
     </div>
-
+    <h2>{{categoriyaProductId}}</h2>
   </q-page>
 </template>
 <script>
 
-import { ref } from 'vue'
+import { ref , onMounted } from "vue";
+import axios from "axios";
+import { useRoute } from 'vue-router';
 import Shopcards from 'src/components/ShopPage/Shopcards.vue'
 
 export default {
     setup() {
+      const categoriyaProductId=ref([])
+      const route = useRoute()
+      onMounted(()=>{
+        
+      const getComment = async () => {
+        try {
+          const Fetch_Categoriya_Id = await axios.get(`http://127.0.0.1:8000/categoriya/${route.params.id}/`);
+          categoriyaProductId.value = Fetch_Categoriya_Id.data;
+          console.log('lkjhg');
+        } 
+        catch (err) {
+          console.log(err);
+        }
+
+      };
+      let timerId = setInterval(() => getComment(), 1000);
+      setTimeout(() => { clearInterval(timerId) }, 5000);
+      
+      }
+  
+    )
         return {
             left: ref(true),
             right: ref(false),
@@ -113,6 +136,7 @@ export default {
             right8: ref(false),
             left9: ref(true),
             right9: ref(false),
+            categoriyaProductId
         };
     },
     components: { Shopcards }

@@ -2,10 +2,10 @@
   <div class="w-100pr row justify-center"> 
     <!-- bosh sarlavha --> 
     <div 
-      class=" w-75pr_md-100pr_sm-100pr
+      class=" w-100pr
         justify-center 
         content-center 
-        shadow-up-14 
+        shadow-up 
         q-pb-xl
         login 
       " 
@@ -23,16 +23,17 @@
             <q-input 
               type="text" 
               class="w-90pr mb-40px" 
-              v-model="text" 
-              label="Name" 
+              v-model="fullname" 
+              label="Fullname" 
               :dense="dense" 
             /> 
             <q-input 
-              type="text" 
+              type="number" 
               class="w-90pr mb-40px" 
-              v-model="text1" 
-              label="Surname" 
+              v-model="telnumber" 
+              label="Number" 
               :dense="dense" 
+
             /> 
           </div> 
         </form> 
@@ -41,9 +42,9 @@
           <form> 
             <q-input 
               class="w-90pr" 
-              type="number" 
-              v-model="number" 
-              label="Number" 
+              type="text" 
+              v-model="address" 
+              label="Address" 
               :dense="dense" 
             /> 
           </form> 
@@ -54,7 +55,7 @@
         </div> 
         <br /> 
         <div class="row q-mt-md justify-center"> 
-          <q-btn color="secondary" label="Send Message" /> 
+          <q-btn color="secondary" @click="setOrder()" label="Send Message" /> 
         </div> 
         <br /><br /> 
         <!-- inputlar tugashi --> 
@@ -65,20 +66,50 @@
   </div> 
 </template> 
 <script> 
-import { ref } from "vue"; 
+import { mapMutations, mapState } from 'vuex';
 export default { 
-  setup() { 
-    return { 
-      text: ref(""), 
-      text1: ref(""), 
-      number: ref(""), 
-      textarea: ref(""), 
-      dense: ref(true), 
+  data() { 
+    return {   
+      fullname: "", 
+      telnumber: "", 
+      address: "",
+      location:"",
+      dense:true, 
     }; 
   }, 
+  computed:{
+    ...mapState(["costs"])
+  },
+  methods:{
+    ...mapMutations(["SET_ORDER","CALCULATION_SHOT"]),
+    setOrder(){
+      if(this.costs.length >=1){
+        const order= {
+          fullname:this.fullname,
+          address:this.address,
+          telnumber:this.telnumber,
+          ready:"",
+          location:this.location,
+          product:this.costs
+        }
+        this.SET_ORDER(order)
+        this.CALCULATION_SHOT()
+        alert("Sizning buyurtmangiz qabul qilindi tez orada adminlarimiz siz bilan  bog'lanishadi")
+        this.setolder=false
+
+      }
+      else{
+        alert("sizda hech qanday buyurtma yo'q")
+      }
+
+    }
+  }
 }; 
 </script>
 <style scoped>
+.shadow-up{
+  box-shadow: 3px 3px 15px 0px rgb(186, 185, 185);
+}
 .login{
   border-radius: 20px 0px 20px 0px;
 }
