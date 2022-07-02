@@ -2,7 +2,7 @@
   <div class="w-100pr row justify-center"> 
     <!-- bosh sarlavha --> 
     <div 
-      class=" w-75pr_md-100pr_sm-100pr
+      class=" w-100pr
         justify-center 
         content-center 
         shadow-up 
@@ -69,7 +69,7 @@
 import { mapMutations, mapState } from 'vuex';
 export default { 
   data() { 
-    return { 
+    return {   
       fullname: "", 
       telnumber: "", 
       address: "",
@@ -81,17 +81,26 @@ export default {
     ...mapState(["costs"])
   },
   methods:{
-    ...mapMutations(["SET_ORDER"]),
+    ...mapMutations(["SET_ORDER","CALCULATION_SHOT"]),
     setOrder(){
-      const order= {
-        fullname:this.fullname,
-        address:this.address,
-        telnumber:this.telnumber,
-        ready:"",
-        location:this.location,
-        product:this.costs
+      if(this.costs.length >=1){
+        const order= {
+          fullname:this.fullname,
+          address:this.address,
+          telnumber:this.telnumber,
+          ready:"",
+          location:this.location,
+          product:this.costs
+        }
+        this.SET_ORDER(order)
+        this.CALCULATION_SHOT()
+        alert("Sizning buyurtmangiz qabul qilindi tez orada adminlarimiz siz bilan  bog'lanishadi")
+        this.setolder=false
+
       }
-      this.SET_ORDER(order)
+      else{
+        alert("sizda hech qanday buyurtma yo'q")
+      }
 
     }
   }

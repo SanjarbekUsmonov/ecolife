@@ -20,7 +20,7 @@
           <q-icon color="white" size="25px" name="search" class="q-mr-md" />
           <router-link to="basket">
             <q-icon color="white" size="25px" name="shopping_cart" /><strong
-            class="mt-3px ml-10px mr-10px text-white text-weight-bold">0.00 $</strong>
+            class="mt-3px ml-10px mr-10px text-white text-weight-bold">{{shot}} $</strong>
           </router-link>
         </div>
       </q-toolbar>
@@ -101,14 +101,17 @@
 
 
 <script>
-import { ref } from "vue";
+import { mapState } from 'vuex';
 
 export default {
-  setup() {
+  data() {
     return {
-      email: ref(""),
-      dense: ref(true),
-    };
+      email:"",
+      dense:true,
+    }
+  },
+  computed:{
+    ...mapState(["shot"])
   },
 };
 </script>

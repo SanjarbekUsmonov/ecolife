@@ -29,19 +29,19 @@
                 class="w-65pr h-100pr row justify-center items-center"
                 style="border-right: 1px solid grey"
               >
-                {{cost.amount}}kg
+                {{cost.amount}}{{cost.size}}
               </div>
               <div class="w-35pr h-100pr">
                 <div
                   class="w-100pr h-50pr row justify-center items-center"
                   style="border-bottom: 1px solid grey"
                 >
-                  <button class="btn-inc" @click="Increment(i)">
+                  <button class="btn-inc w-100pr h-100pr row justify-center items-center" @click="Increment(i)">
                     <q-icon size="18px" name="expand_less" />
                   </button>
                 </div>
                 <div class="w-100pr h-50pr row justify-center items-center">
-                  <button class="btn-inc" @click="Decrement(i)">
+                  <button class="btn-inc w-100pr h-100pr row justify-center items-center" @click="Decrement(i)">
                     <q-icon size="18px" name="expand_more" />
                   </button>
                 </div>
@@ -115,21 +115,24 @@ export default {
     console.log(Math.round10(1.005, -2))
   },
   methods:{
-    ...mapMutations(["INCREMENT","DECREMENT","REMOWE"]),
+    ...mapMutations(["INCREMENT","DECREMENT","REMOWE","CALCULATION_SHOT"]),
     Increment(i){
       this.INCREMENT(i)
       // this.costs[i].amount++
       // this.costs[i].overallPrice=Math.round10(this.costs[i].amount*this.costs[i].price , -2)
+      this.CALCULATION_SHOT()
     },
     Decrement(i){
       if(this.costs[i].amount >1){
         this.DECREMENT(i)
         // this.costs[i].amount--
         // this.costs[i].overallPrice=Math.round10(this.costs[i].amount*this.costs[i].price , -2)
+        this.CALCULATION_SHOT()
       }
     },
     Remowe(i){
       this.REMOWE(i)
+      this.CALCULATION_SHOT()
     }
   }
 };

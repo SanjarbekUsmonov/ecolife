@@ -7,7 +7,7 @@
           <div class="row justify-center align-center">
             <q-card class="w-80pr h-88vh mt-m1pr">
               <div class="MyClose mt-15px ml-97pr">
-                <q-btn flat round dense icon="close" v-close-popup class="mt-m40pr" />
+                <q-btn flat round dense icon="close" v-close-popup class="" />
               </div>
               <div class="row mt-m50px">
                 <div class="w-40pr h-450px mt-40px">
@@ -70,6 +70,7 @@
 <script>
 import { ref } from 'vue'
 export default {
+ 
   data() {
     return {
       icon: ref(false),

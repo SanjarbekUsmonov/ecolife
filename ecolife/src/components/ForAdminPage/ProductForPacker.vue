@@ -13,16 +13,16 @@
                     class="my-card w-300px p-4pr mt-50px "
                     v-if="order.product.length==1 ? true :false"
                 >
-                    <img :src="order.product[0].img">
+                    <img :src="order.product[0].imgLink">
 
                     <q-card-section>
                     
                         <div class="q-mt-sm">
-                            <div class="fs-18px ">Mahsulot: {{order.product[0].productname}}</div>
+                            <div class="fs-18px ">Mahsulot: {{order.product[0].name}}</div>
                             <q-separator  size="1px" class="bg-dark" />
                         </div>
                         <div  class="q-mt-sm">
-                            <div class="fs-18px ">Vazni: {{order.product[0].weight}}</div>
+                            <div class="fs-18px ">Vazni: {{order.product[0].amout}}</div>
                             <q-separator  size="1px" class="bg-dark" />
                         </div>
                         <div class="q-mt-sm">
@@ -74,13 +74,13 @@
                 
                     <div class="  row justify-around">
                         <div class=" m-30px bg-white  br-10px products p-20px w-300px">
-                            <q-img width="100%" class="br-3px" :src="order.product[0].img" />
+                            <q-img width="100%" class="br-3px" :src="order.product[0].imgLink" />
                             <div class="q-mt-sm">
-                                <div class="fs-18px ">Mahsulot:{{order.product[0].productname}}</div>
+                                <div class="fs-18px ">Mahsulot:{{order.product[0].name}}</div>
                                 <q-separator  size="1px" class="bg-dark" />
                             </div>
                             <div  class="q-mt-sm">
-                                <div class="fs-18px ">Vazni: {{order.product[0].weight}}</div>
+                                <div class="fs-18px ">Vazni: {{order.product[0].amount}}</div>
                                 <q-separator  size="1px" class="bg-dark" />
                             </div>
                             <div class="q-mt-sm">
@@ -89,13 +89,13 @@
                             </div>
                         </div> 
                         <div v-if="order.product.length>1 ? true :false" class=" m-30px bg-white   br-10px products p-20px w-300px">
-                            <q-img width="100%" class="br-3px" :src="order.product[1].img" />
+                            <q-img width="100%" class="br-3px" :src="order.product[1].imgLink" />
                             <div class="q-mt-sm">
-                                <div class="fs-18px ">Mahsulot:{{order.product[1].productname}}</div>
+                                <div class="fs-18px ">Mahsulot:{{order.product[1].name}}</div>
                                 <q-separator  size="1px" class="bg-dark" />
                             </div>
                             <div  class="q-mt-sm">
-                                <div class="fs-18px ">Vazni: {{order.product[1].weight}}</div>
+                                <div class="fs-18px ">Vazni: {{order.product[1].amount}}</div>
                                 <q-separator  size="1px" class="bg-dark" />
                             </div>
                             <div class="q-mt-sm">
@@ -104,13 +104,13 @@
                             </div>
                         </div> 
                         <div v-if="order.product.length>2 ? true :false" class=" m-30px bg-white   br-10px products p-20px w-300px">
-                            <q-img width="100%" class="br-3px" :src="order.product[1].img" />
+                            <q-img width="100%" class="br-3px" :src="order.product[1].imgLink" />
                             <div class="q-mt-sm">
-                                <div class="fs-18px ">Mahsulot:{{order.product[1].productname}}</div>
+                                <div class="fs-18px ">Mahsulot:{{order.product[1].name}}</div>
                                 <q-separator  size="1px" class="bg-dark" />
                             </div>
                             <div  class="q-mt-sm">
-                                <div class="fs-18px ">Vazni: {{order.product[1].weight}}</div>
+                                <div class="fs-18px ">Vazni: {{order.product[1].amount}}</div>
                                 <q-separator  size="1px" class="bg-dark" />
                             </div>
                             <div class="q-mt-sm">
@@ -119,13 +119,13 @@
                             </div>
                         </div>
                         <div v-if="order.product.length>3 ? true :false" class=" m-30px bg-white   br-10px products p-20px w-300px">
-                            <q-img width="100%" class="br-3px" :src="order.product[2].img" />
+                            <q-img width="100%" class="br-3px" :src="order.product[2].imgLink" />
                             <div class="q-mt-sm">
-                                <div class="fs-18px ">Mahsulot:{{order.product[2].productname}}</div>
+                                <div class="fs-18px ">Mahsulot:{{order.product[2].name}}</div>
                                 <q-separator  size="1px" class="bg-dark" />
                             </div>
                             <div  class="q-mt-sm">
-                                <div class="fs-18px ">Vazni: {{order.product[2].weight}}</div>
+                                <div class="fs-18px ">Vazni: {{order.product[2].amount}}</div>
                                 <q-separator  size="1px" class="bg-dark" />
                             </div>
                             <div class="q-mt-sm">
@@ -134,13 +134,13 @@
                             </div>
                         </div>  
                         <div v-if="order.product.length>4 ? true :false" class=" m-30px bg-white   br-10px products p-20px w-300px">
-                            <q-img width="100%" class="br-3px" :src="order.product[3].img" />
+                            <q-img width="100%" class="br-3px" :src="order.product[3].imgLink" />
                             <div class="q-mt-sm">
-                                <div class="fs-18px ">Mahsulot:{{order.product[3].productname}}</div>
+                                <div class="fs-18px ">Mahsulot:{{order.product[3].name}}</div>
                                 <q-separator  size="1px" class="bg-dark" />
                             </div>
                             <div  class="q-mt-sm">
-                                <div class="fs-18px ">Vazni: {{order.product[3].weight}}</div>
+                                <div class="fs-18px ">Vazni: {{order.product[3].amount}}</div>
                                 <q-separator  size="1px" class="bg-dark" />
                             </div>
                             <div class="q-mt-sm">
@@ -149,13 +149,13 @@
                             </div>
                         </div>     
                         <div v-if="order.product.length>5 ? true :false" class=" m-30px bg-white   br-10px products p-20px w-300px">
-                            <q-img width="100%" class="br-3px" :src="order.product[4].img" />
+                            <q-img width="100%" class="br-3px" :src="order.product[4].imgLink" />
                             <div class="q-mt-sm">
-                                <div class="fs-18px ">Mahsulot:{{order.product[4].productname}}</div>
+                                <div class="fs-18px ">Mahsulot:{{order.product[4].name}}</div>
                                 <q-separator  size="1px" class="bg-dark" />
                             </div>
                             <div  class="q-mt-sm">
-                                <div class="fs-18px ">Vazni: {{order.product[4].weight}}</div>
+                                <div class="fs-18px ">Vazni: {{order.product[4].amount}}</div>
                                 <q-separator  size="1px" class="bg-dark" />
                             </div>
                             <div class="q-mt-sm">
@@ -185,7 +185,7 @@
                                         <q-separator  size="1px" class="bg-grey-7" />
                                     </div>
                                     <div class="w-100pr">
-                                        <div class="fs-16px mt-5px">Manzili:order.{{order.address}} </div>
+                                        <div class="fs-16px mt-5px">Manzili:{{order.address}} </div>
                                         <q-separator  size="1px" class="bg-grey-7" />
                                     </div>
                                 </q-card-section>
@@ -208,25 +208,15 @@
     </div>
 </template>
 <script>
-import { ref } from '@vue/reactivity'
 import { mapMutations, mapState } from 'vuex'
 export default {
     
-    setup() {
-            const products=ref([])
-            const getProduct=()=>{
-                products=orders.value.product
-            }
-        return {
-            products
-        }
-    },
     methods:{
         ...mapMutations(["PREPARATION","READY"]),
         Preparation(i){
             this.PREPARATION(i)
             console.log(this.orders[i].ready);
-            console.log(products);
+           
         },
         Ready(i){
             this.READY(i)

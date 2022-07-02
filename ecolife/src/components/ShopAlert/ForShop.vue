@@ -1,83 +1,60 @@
 <template>
   <div>
     <q-page>
-      <q-card class="w-100pr h-250px bg-grey-4 row align-center content-center justify-center no-shadow ">
-        <q-breadcrumbs class="text-brown text-subtitle1">
-          <template v-slot:separator>
-            <q-icon
-              size="1.5em"
-              name="chevron_right"
-              color="grey"
-            />
-          </template>
-
-          <q-breadcrumbs-el class="Mya" label="Home" />
-          <q-breadcrumbs-el class="Mya" label="Fast Food"/>
-          <q-breadcrumbs-el class="text-red" label="Pizza Mushrooms"/>
-        </q-breadcrumbs>
-      </q-card>
-
-      <div class="row">
-        <div class="w-50pr h-750px">
-          <q-badge label="NEW" class="bg-red ml-90pr q-pt-sm mt-60px" />
-          <img class="fit" src="http://demo.posthemes.com/pos_ecolife_fastfood/374-large_default/pizza-mushrooms.jpg" alt="">
-        </div>
-        <div class="lh-3 fs-15px mt-40px q-ml-md">
-          <span class="text-h5 text-bold">Pizza Mushrooms</span>
-          <div class="text-subtitle1 text-bold">Reference: <span class="text-weight-regular">demo_24</span></div>
-          <div class="row text-subtitle1">
-            <div class="q-pa-md">
-              <q-rating
-                v-model="model"
-                max="5"
-                color="yellow"
-                icon="star_border"
-                icon-selected="star"
-                icon-half="star_half"
-                no-dimming
-              />
+      <div class="row justify-around">
+          <div class="w-40pr_md-40pr_sm-100pr row items-center justify-center">
+            <div class="w-70pr_md-70pr_sm10pr">
+              <img class="fit" src="http://demo.posthemes.com/pos_ecolife_fastfood/374-large_default/pizza-mushrooms.jpg" />
             </div>
+          </div>
+        <div class="w-40pr_md-40pr_sm-100pr lh-3 fs-15px mt-80px q-ml-md">
+          <span class="text-h5 ">Pizza Mushrooms</span>
+          <div class="text-subtitle1 text-bold">Reference: <span class="text-weight-regular">demo_24</span></div>
+          <div class="row wrap items-center ml-m3pr fs-50px_md_15px_sm15px w-100pr_md-50pr_sm25pr">
             <div class="Mya">
               <q-icon name="fa-solid fa-comment-dots" class="q-mx-sm"/>
               <span>Read reviews (1)</span>
             </div>
-            <div class="Mya">
-              <q-icon class="q-mx-sm" name="notes"/>
+            <div class="Mya ml-10px fs-50px_md_15px_sm15px">
+              <q-icon class="q-mx-sm" name="fa-solid fa-clipboard"/>
               <span>Write a review</span>
             </div>
           </div>
-          <div>
+          <div class="mt-15px">
             <span class="text-h6 text-strike text-grey">$23.90</span>
             <span class="text-h5 q-mx-md">$23.90</span>
             <q-badge class="bg-red q-py-sm q-px-md" label="Save 10%" />
           </div>
-          <div class="column lh-2 text-subtitle1 text-grey text-bold ">
+          <div class="column lh-1_5 fs-50px_md_15px_sm15px text-grey-8 mt-20px">
             <span>Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket.</span>
             <span>Part of the Kaval Collection.</span>
             <span>Regular fit is eased, but not sloppy, and perfect for any activity.</span>
             <span>Plain-woven jacket specifically constructed for freedom of movement.</span>
-          </div><hr>
-          <div class="row">
-            <div class="text-subtitle column">
-              <span class="text-bold">Size</span>
-              <select name="" id="" class="w-110px h-40px">
-                  <option value="">40sm 60sm</option>
-              </select>
+          </div>
+          <q-card class="bg-grey h-1px q-my-lg no-shadow"></q-card>
+          <div class="row justify-right">
+            <div class="row justify-around no-wrap ">
+              <div class="text-subtitle column">
+                <span class="text-bold">Size</span>
+                <select name="" id="" class="h-40px">
+                  <option value="" label="kgfew,l"/>
+                </select>
+              </div>
+              <div class="text-subtitle column q-ml-lg ">
+                <span class="text-bold">How Mony</span>
+                <input type="number" class="w-72px h-40px"/>
+              </div>
             </div>
-            <div class="text-subtitle column ml-50px">
-              <span class="text-bold">How Mony</span>
-              <input type="number" class="w-110px h-40px">
+          </div>
+          <div class="row justify-center">
+            <div class="w-40pr_md-60pr_sm-50pr h-40px mt-35px mb-35px">
+              <q-btn class="bg-red text-white fit" icon="add" rounded>Add To Card</q-btn>
             </div>
           </div>
-          <div class="w-40pr h-50px mt-35px">
-            <q-btn class="bg-red text-white fit" icon="add" rounded>Add To Card</q-btn>
-          </div>
-          <div class="mt-15px text-h6">
-            <a href="" class="Mya fs-15px mt-30px" ><q-icon name="shuffle"/> Add To Compare</a>
-          </div>
-          <div class="fs-18px row mt-m15px ">
+
+          <div class=" row items-center fs-18px">
             <span class="text-bold">Shere</span>
-            <div class="row justify-around w-150px mt-20px">
+            <div class="row justify-around w-150px">
               <q-icon class="Mya" name="facebook"></q-icon>
               <q-icon class="Mya" name="fa-brands fa-instagram-square"></q-icon>
               <q-icon class="Mya" name="fa-brands fa-google"></q-icon>
@@ -85,31 +62,32 @@
             </div>
           </div>
           <div>
-            <div>
-              <q-icon class="text-h4" name="fa-solid fa-truck"></q-icon>
-              <span>Security Policy (Edit With Customer Reassurance Module)</span>
-            </div>
-            <div>
-              <q-icon class="text-h4" name="fa-solid fa-truck"></q-icon>
-              <span>Security Policy (Edit With Customer Reassurance Module)</span>
-            </div>
-            <div>
-              <q-icon class="text-h4" name="fa-solid fa-truck"></q-icon>
-              <span>Security Policy (Edit With Customer Reassurance Module)</span>
-            </div>
+            <q-item v-for="item in 3" :key="item">
+              <q-item-section avatar>
+                <q-avatar>
+                  <img src="https://cdn.quasar.dev/img/avatar3.jpg">
+                </q-avatar>
+              </q-item-section>
+              <q-item-section
+              class="lh-1_5 text-weight-light text-grey-9">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </q-item-section>
+            </q-item>
           </div>
         </div>
       </div>
       <q-card>
-        <q-separator />
+        <q-separator/>
         <q-tabs
           v-model="tab"
           dense
-          class="bg-grey-2 text-red"
+          content-class="bg-grey-2 text-red row wrap justify-center items-center content-start"
         >
-          <q-tab name="DESCRIPTION" label="DESCRIPTION" />
-          <q-tab name="PRODUCT DETAILS" label="PRODUCT DETAILS" />
-          <q-tab name="REVIEWS" label="REVIEWS" />
+        <div class="bg-grey-2 text-red row wrap justify-between items-center content-start">
+          <q-tab class="w-10pr_md-100pr_sm-100pr" name="DESCRIPTION" label="DESCRIPTION" />
+          <q-tab class="w-10pr_md-100pr_sm-100pr q-mx-md" name="PRODUCT DETAILS" label="PRODUCT DETAILS" />
+          <q-tab class="w-10pr_md-100pr_sm-100pr" name="REVIEWS" label="REVIEWS" />
+        </div>
+
         </q-tabs>
       </q-card>
       <q-tab-panels v-model="tab" animated>
@@ -170,21 +148,21 @@
         <q-tab-panel name="REVIEWS">
           <div class="column lh-2 text-bold">
             <div>
-              <span class="text-grey q-pr-sm">Grade</span>
+              <span class="text-grey-9 q-pr-sm">Grade</span>
               <q-icon class="text-yellow text-weight-bolder text-body1 m-1px mt-8px q-mb-sm" name="star" v-for="star in stars" :key="star"></q-icon>
             </div>
             <span>posthemes</span>
-            <span class="text-grey">02/20/2020</span>
+            <span class="text-grey-9">02/20/2020</span>
             <span>Demo</span>
-            <span class="text-grey">Good !</span>
+            <span class="text-grey-9">Good !</span>
             <div class="w-14pr h-40px bg-dark text-white br-5px q-mt-xs ">
               <q-btn class="fit">Write Your Review!</q-btn>
             </div>
           </div>
         </q-tab-panel>
       </q-tab-panels><br>
-      <div class="text-center">
-        <span class="text-h4 text-bold">You Might Also Like</span>
+      <div class="text-center fs-25px_md-25px_sm-20px">
+        <span class="text-bold">You Might Also Like</span>
         <div class=" row wrap justify-center items-center q-mt-md">
           <q-card class="w-100px h-1px bg-grey q-mr-md"></q-card>
             <q-icon name="star" class="text-h5 text-red"></q-icon>
@@ -192,7 +170,7 @@
         </div>
       </div>
       <div class="text-center">
-        <span class="text-h4 text-bold">16 Other Products In The Same Category:</span>
+        <span class="text-bold">16 Other Products In The Same Category:</span>
         <div class=" row wrap justify-center items-center q-mt-md">
           <q-card class="w-100px h-1px bg-grey q-mr-md"></q-card>
             <q-icon name="star" class="text-h5 text-red"></q-icon>
@@ -240,4 +218,5 @@ export default {
   color: red;
   justify-content: space-around;
 }
+.h{ height:500px;} @media screen and (min-height:30px) and (max-height:30px) {.h{ height:30px;} }
 </style>
