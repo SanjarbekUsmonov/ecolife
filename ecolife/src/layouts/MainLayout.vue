@@ -14,7 +14,10 @@
           <span class="span q-ml-xl text-subtitle2 text-weight-bold text-black">Prices Drop</span>
           <span class="span q-ml-xl text-subtitle2 text-weight-bold text-black">Contact us</span>
           <q-space />
-          <q-icon color="black" size="25px" name="search" class="q-mr-md" />
+          <q-icon color="black" size="25px" name="search" @click="card = true" class="q-mr-md" />
+          <q-dialog class="row" position="right" v-model="card">
+            <CompDiolog />
+          </q-dialog>
           <q-icon color="black" size="25px" name="lock" /><strong
             class="mt-3px mr-10px text-black text-weight-bold">$0.00</strong>
         </div>
@@ -96,14 +99,16 @@
 
 <script>
 import { ref } from "vue";
-
+import CompDiolog from "src/components/CompDiolog";
 export default {
-  setup() {
-    return {
-      email: ref(""),
-      dense: ref(true),
-    };
-  },
+    setup() {
+        return {
+            card: ref(false),
+            email: ref(""),
+            dense: ref(true),
+        };
+    },
+    components: { CompDiolog }
 };
 </script>
 
