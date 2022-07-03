@@ -1,76 +1,90 @@
 <template>
   <div>
     <q-btn label="With QToolbar" color="primary" @click="toolbar = true" />
-    <q-dialog class="MyDialog bg-transparent" full-height full-width v-model="toolbar">
-      <q-card class="no-shadow bg-transparent" full-width>
-        <q-card-section>
-          <div class="row justify-center align-center">
-            <q-card class="w-80pr h-88vh mt-m1pr">
-              <div class="MyClose mt-15px ml-97pr">
-                <q-btn flat round dense icon="close" v-close-popup class="" />
-              </div>
-              <div class="row mt-m50px">
-                <div class="w-40pr h-450px mt-40px">
-                <img src="http://demo.posthemes.com/pos_ecolife_fastfood/374-large_default/pizza-mushrooms.jpg" class="fit">
-              </div>
-              <div class="column w-60pr h-450px lh-3 mt-70px">
-                <span class="text-h5 text-bold">Pizza Mushrooms</span>
-                <span class="text-subtitle1 mt-6px text-bold">Reference: demo_24</span>
-                <div>
-                  <q-icon class="text-yellow text-weight-bolder text-subtitle1" name="star" v-for="star in stars" :key="star"></q-icon>
-                </div>
-                <div class="text-h5 text-bold">
-                  <span class="text-strike text-grey fs-20px">$23.90</span>
-                  <span class="q-ml-md">$21.51</span>
-                  <q-badge class="bg-dark text-white h-25px w-10pr mt-10px q-ml-md text-bold" label="Save 10%" />
-                </div>
-                <div class="column lh-1_8 mt-25px text-grey text-subtitle1">
-                  <span>Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket.</span>
-                  <span>Part of the Kaval Collection.</span>
-                  <span>Regular fit is eased, but not sloppy, and perfect for any activity.</span>
-                  <span>Plain-woven jacket specifically constructed for freedom of movement.</span>
-                </div>
-                <q-separator inset class="q-mt-lg "/>
-                <div class="row">
-                  <div class="column w-50px align-center justify-center">
-                    <span>Dimension</span>
-                    <select name="" id="" class="w-110px h-35px">
-                      <option value="">w-50px h-35px</option>
-                    </select>
-                  </div>
-                  <div class="column ml-100px">
-                    <span>how many</span>
-                    <input type="number" class="w-80px h-35px">
-                  </div>
-                </div>
-                <div class="w-35pr h-50px br-50pr lh-3">
-                  <q-btn icon="add" class="mt-30px fit bg-red text-white " rounded  >ADD TO CARD</q-btn>
-                  <div class="mt-15px">
-                    <a href="" class="Mya fs-15px mt-30px" ><q-icon name="shuffle"/> Add To Compare</a>
-                  </div>
-                  <div class="fs-20px row mt-m15px ">
-                    <span class="text-bold">Shere</span>
-                    <div class="row justify-around w-150px mt-20px">
-                      <q-icon class="Mya" name="facebook"></q-icon>
-                      <q-icon class="Mya" name="fa-brands fa-instagram-square"></q-icon>
-                      <q-icon class="Mya" name="fa-brands fa-google"></q-icon>
-                      <q-icon class="Mya" name="fa-brands fa-telegram"></q-icon>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              </div>
-            </q-card>
+    <q-dialog class="MyDialog " full-height full-width v-model="toolbar">
+     <q-card>
+      <div class="row justify-around">
+          <div class="w-40pr_md-40pr_sm-100pr row items-center justify-center">
+            <div class="w-70pr_md-70pr_sm10pr">
+              <img class="fit" src="http://demo.posthemes.com/pos_ecolife_fastfood/374-large_default/pizza-mushrooms.jpg" />
+            </div>
           </div>
-        </q-card-section>
-      </q-card>
+        <div class="w-40pr_md-40pr_sm-100pr lh-3 fs-15px mt-80px q-ml-md">
+          <span class="text-h5 ">Pizza Mushrooms</span>
+          <div class="text-subtitle1 text-bold">Reference: <span class="text-weight-regular">demo_24</span></div>
+          <div class="row wrap items-center ml-m3pr fs-50px_md_15px_sm15px w-100pr_md-50pr_sm25pr">
+            <div class="Mya">
+              <q-icon name="fa-solid fa-comment-dots" class="q-mx-sm"/>
+              <span>Read reviews (1)</span>
+            </div>
+            <div class="Mya ml-10px fs-50px_md_15px_sm15px">
+              <q-icon class="q-mx-sm" name="fa-solid fa-clipboard"/>
+              <span>Write a review</span>
+            </div>
+          </div>
+          <div class="mt-15px">
+            <span class="text-h6 text-strike text-grey">$23.90</span>
+            <span class="text-h5 q-mx-md">$23.90</span>
+            <q-badge class="bg-red q-py-sm q-px-md" label="Save 10%" />
+          </div>
+          <div class="column lh-1_5 fs-50px_md_15px_sm15px text-grey-8 mt-20px">
+            <span>Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket.</span>
+            <span>Part of the Kaval Collection.</span>
+            <span>Regular fit is eased, but not sloppy, and perfect for any activity.</span>
+            <span>Plain-woven jacket specifically constructed for freedom of movement.</span>
+          </div>
+          <q-card class="bg-grey h-1px q-my-lg no-shadow"></q-card>
+          <div class="row justify-right">
+            <div class="row justify-around no-wrap ">
+              <div class="text-subtitle column">
+                <span class="text-bold">Size</span>
+                <select name="" id="" class="h-40px">
+                  <option value="" label="kgfew,l"/>
+                </select>
+              </div>
+              <div class="text-subtitle column q-ml-lg ">
+                <span class="text-bold">How Mony</span>
+                <input type="number" class="w-72px h-40px"/>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-center">
+            <div class="w-40pr_md-60pr_sm-50pr h-40px mt-35px mb-35px">
+              <q-btn class="bg-red text-white fit" icon="add" rounded>Add To Card</q-btn>
+            </div>
+          </div>
+
+          <div class=" row items-center fs-18px">
+            <span class="text-bold">Shere</span>
+            <div class="row justify-around w-150px">
+              <q-icon class="Mya" name="facebook"></q-icon>
+              <q-icon class="Mya" name="fa-brands fa-instagram-square"></q-icon>
+              <q-icon class="Mya" name="fa-brands fa-google"></q-icon>
+              <q-icon class="Mya" name="fa-brands fa-telegram"></q-icon>
+            </div>
+          </div>
+          <div>
+            <q-item v-for="item in 3" :key="item">
+              <q-item-section avatar>
+                <q-avatar>
+                  <img src="https://cdn.quasar.dev/img/avatar3.jpg">
+                </q-avatar>
+              </q-item-section>
+              <q-item-section
+              class="lh-1_5 text-weight-light text-grey-9">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </q-item-section>
+            </q-item>
+          </div>
+        </div>
+      </div>
+      <br><br>
+    </q-card>
     </q-dialog>
   </div>
 </template>
 <script>
 import { ref } from 'vue'
 export default {
- 
   data() {
     return {
       icon: ref(false),
@@ -89,6 +103,14 @@ export default {
 }
 </script>
 <style scoped>
+.Mya{
+  text-decoration: none;
+  color: gray;
+}
+.Mya:hover{
+  color: red;
+  justify-content: space-around;
+}
 .Mya{
   text-decoration: none;
 }

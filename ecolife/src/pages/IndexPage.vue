@@ -8,7 +8,10 @@
         <Suspense>
           <CompPopular   />
         </Suspense>
-        <CompHotdeals />
+        <Suspense>
+          <CompHotdeals />
+        </Suspense>
+        
       </div>
     </div>
 

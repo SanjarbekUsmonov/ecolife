@@ -2,9 +2,9 @@
   <div class="w-100pr">
     <div class="text-h6">Shopping Cart</div>
     <div v-for="cost , i in costs" :key="i" class="w-90pr mt-50px">
-      <div class="w-100pr h-100pr row items-center justify-between">
-        <div class="w-25pr">
-          <q-img :width="widthImg" :src="cost.imgLink" />
+      <div class="w-100pr h-100pr mb-10px row items-center justify-between">
+        <div v-for="imgSrc in costs[i].imgLink" :key="imgSrc" class="w-25pr">
+          <q-img :width="widthImg" :src="imgSrc.file_field" />
         </div>
         <div class="w-45pr content-cost " >
           <div class="w-65pr_md-65pr_sm-100pr h-90pr ">

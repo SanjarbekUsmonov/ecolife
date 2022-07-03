@@ -162,7 +162,7 @@
         </q-tab-panel>
       </q-tab-panels><br>
       <div class="text-center fs-25px_md-25px_sm-20px">
-        <span class="text-bold">You Might Also Like</span>
+        <span class="fs-20px_md-16px_sm-14px text-bold">You Might Also Like</span>
         <div class=" row wrap justify-center items-center q-mt-md">
           <q-card class="w-100px h-1px bg-grey q-mr-md"></q-card>
             <q-icon name="star" class="text-h5 text-red"></q-icon>
@@ -170,7 +170,7 @@
         </div>
       </div>
       <div class="text-center">
-        <span class="text-bold">16 Other Products In The Same Category:</span>
+        <span class="fs-20px_md-16px_sm-14px text-bold">16 Other Products In The Same Category:</span>
         <div class=" row wrap justify-center items-center q-mt-md">
           <q-card class="w-100px h-1px bg-grey q-mr-md"></q-card>
             <q-icon name="star" class="text-h5 text-red"></q-icon>
