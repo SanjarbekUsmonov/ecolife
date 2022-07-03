@@ -5,8 +5,8 @@
     </div>
 </template>
 <script>
-import Report from 'src/components/Report.vue'
-import ProductForCarrier from 'src/components/ProductForCarrier.vue'
+import Report from 'src/components/ForAdminPage/Report.vue';
+import ProductForCarrier from 'src/components/ForAdminPage/ProductForCarrier.vue';
 export default {
   components: { Report, ProductForCarrier },
     

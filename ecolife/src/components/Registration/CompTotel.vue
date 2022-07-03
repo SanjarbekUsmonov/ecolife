@@ -1,6 +1,6 @@
 <template> 
-  <div> 
-    <div class=" w-100pr br-6px shadow-up-14"> 
+  <div class="w-75pr_lg-90pr_md-100pr row justify-center"> 
+    <div class=" w-90pr br-6px shadow-up"> 
       <div v-for="son in sons" :key="son" class=" w-100pr q-pt-sm"> 
         <div class="q-ml-sm q-mr-sm text-subtitle2">{{son.sonlar}} items</div> 
         <q-list class="rounded-borders" /> 
@@ -45,7 +45,7 @@
       
     </div><br> 
  
-    <div> 
+    <div class="w-90pr colum justify-center mt-25px pl-15px"> 
  
       <div class="row justify-center w-100pr"> 
         <q-icon class="text-h3" color="grey" name="delivery_dining"></q-icon> 
@@ -97,6 +97,9 @@ export default {
 </script> 
  
 <style scoped> 
+.shadow-up{
+  box-shadow: 3px 3px 15px 0px rgb(186, 185, 185);
+}
 .btn { 
   border: none; 
 } 
@@ -104,5 +107,15 @@ export default {
 .contier { 
   border-bottom: 1px solid grey; 
 } 
+.w-75pr_lg-90pr_md-100pr{
+  width: 75%;
+}
+
+
+@media screen and (max-width:1399px) {
+  .w-75pr_lg-90pr_md-100pr{
+  width: 100%;
+}
+}
 </style>
     

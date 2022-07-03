@@ -1,25 +1,27 @@
 <template>
   <q-layout view="hhh lpR fff">
-    <q-header style="background: transparent" reveal class="h-70px content-center">
+    <q-header reveal class="navbar h-70px content-center">
       <q-toolbar>
-        <div class="w-15pr h-50px mt-10px">
-          <img
-            src="http://demo.posthemes.com/pos_ecolife/layout2/img/ecolife-responsive-prestashop-theme-logo-1580528177.jpg"
-            alt="" />
-        </div>
+        <router-link to="/">
+          <div class="w-15pr h-50px mt-10px">
+            <img
+              src="http://demo.posthemes.com/pos_ecolife/layout2/img/ecolife-responsive-prestashop-theme-logo-1580528177.jpg"
+              alt="" />
+          </div>
+        </router-link>
         <div class="row w-85pr h-50px mt-10px content-center">
-          <span class="span q-ml-xl text-subtitle2 text-weight-bold text-black">Home</span>
-          <span class="span q-ml-xl text-subtitle2 text-weight-bold text-black">Fresh Food</span>
-          <span class="span q-ml-xl text-subtitle2 text-weight-bold text-black">Fresh Vegetable</span>
-          <span class="span q-ml-xl text-subtitle2 text-weight-bold text-black">Prices Drop</span>
-          <span class="span q-ml-xl text-subtitle2 text-weight-bold text-black">Contact us</span>
+
           <q-space />
-          <q-icon color="black" size="25px" name="search" @click="card = true" class="q-mr-md" />
-          <q-dialog class="row" position="right" v-model="card">
-            <CompDiolog />
+          <router-link to="login" class="fs-18px mr-20px"> Log In </router-link>
+          <q-icon   @click="visableCard" size="25px" name="search" class="navicon q-mr-md">
+            <q-dialog class="row" position="right" v-model="card">
+              <CompDiolog />
           </q-dialog>
-          <q-icon color="black" size="25px" name="lock" /><strong
-            class="mt-3px mr-10px text-black text-weight-bold">$0.00</strong>
+          </q-icon>
+          <router-link to="basket">
+            <q-icon class="navicon" size="25px" name="shopping_cart" /><strong
+            class="mt-3px ml-10px mr-10px text-white text-weight-bold">{{shot}} $</strong>
+          </router-link>
         </div>
       </q-toolbar>
     </q-header>
@@ -28,8 +30,8 @@
       <router-view />
     </q-page-container>
 
-    <q-footer bordered class="bg-black text-white q-mt-xl h-600px">
-      <div class="w-100pr h-70pr row justify-center items-center content-center">
+    <q-footer bordered class="bg-black text-white h-600px  mt-500px">
+      <div class="w-100pr  h-70pr row justify-center items-center content-center">
         <div class="w-92pr h-60pr row">
           <div class="w-25pr h-100pr">
             <div class="text-h6 text-weight-bolder text-white">
@@ -99,29 +101,51 @@
 
 
 <script>
-import { ref } from "vue";
-import CompDiolog from "src/components/CompDiolog";
+import { mapState } from 'vuex';
+import CompDiolog from "../components/CompDiolog.vue";
 export default {
-    setup() {
-        return {
-            card: ref(false),
-            email: ref(""),
-            dense: ref(true),
-        };
-    },
-    components: { CompDiolog }
+  components:{
+  CompDiolog
+},
+  data() {
+    return {
+      email:"",
+      dense:true,
+      card:false
+    }
+  },
+  computed:{
+    ...mapState(["shot"])
+  },
+  methods:{
+    visableCard(){
+      this.card=true
+    }
+  }
 };
 </script>
-
-
-
-
-
-
-
-
-
-<style>
+<style scoped>
+.fs-18px{
+  text-decoration: none;
+  color: white;
+}
+.fs-18px:hover{
+  color:rgb(0, 255, 247);
+}
+a{
+  text-decoration: none;
+}
+.navbar{
+  background: linear-gradient(
+    to right,
+    rgb(68, 0, 255),
+    rgb(200, 0, 255),
+    rgb(255, 0, 221),
+    rgb(221, 0, 255),
+    rgb(255, 0, 149),
+    rgb(54, 53, 53)
+  ) ;
+}
 .span {
   cursor: pointer;
   background: transparent;
@@ -150,6 +174,15 @@ export default {
 .a-href {
   line-height: 2.5;
   color: grey;
+}
+.navicon{
+color: white;
+}
+
+@media screen and (max-width:400px) {
+  .w-15pr{
+    width: 10%;
+  }
 }
 
 </style>
