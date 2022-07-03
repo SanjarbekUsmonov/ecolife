@@ -97,6 +97,7 @@
   </q-layout>
 </template>
 
+
 <script>
 import { ref } from "vue";
 import CompDiolog from "src/components/CompDiolog";
@@ -111,6 +112,14 @@ export default {
     components: { CompDiolog }
 };
 </script>
+
+
+
+
+
+
+
+
 
 <style>
 .span {
@@ -142,4 +151,5 @@ export default {
   line-height: 2.5;
   color: grey;
 }
+
 </style>
