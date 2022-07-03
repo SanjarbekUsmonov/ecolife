@@ -185,7 +185,6 @@ export default store(function (/* { ssrContext } */) {
       // main yoki maxsulotnig pagesidan bu yerga malumot kelib state ichidagi costs obyektiga malumot kelib tushyabdi
       ADD_BACKET:(state,cost)=>{
         state.costs.push(cost)
-        state.products[cost.id].btnbacket=false
         console.log(state.costs);
          
       },
